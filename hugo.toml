@@ -1,0 +1,28 @@
+baseURL = "http://localhost:1313/"
+languageCode = "zh-cn"
+title = "主公的工程日志"
+theme = "PaperMod"
+
+[params]
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  math = true
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+
+[params.profileMode]
+  enabled = true
+  title = "主公的工程日志"
+  subtitle = "控制 · 嵌入式 · 系统思考"
+  imageUrl = ""
+  imageTitle = ""
+  imageWidth = 120
+  imageHeight = 120
+  buttons = [
+    { name = "文章", url = "/posts/" }
+  ]
