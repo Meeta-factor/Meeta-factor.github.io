@@ -24,5 +24,31 @@ theme = "PaperMod"
   imageWidth = 120
   imageHeight = 120
   buttons = [
-    { name = "文章", url = "/posts/" }
+    { name = "Control", url = "/control/" },
+    { name = "Embedded", url = "/embedded/" },
+    { name = "Math", url = "/math/" },
+    { name = "Thinking", url = "/thinking/" }
   ]
+
+[menu]
+
+  [[menu.main]]
+    name = "Control"
+    url = "/control/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Embedded"
+    url = "/embedded/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Math"
+    url = "/math/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Thinking"
+    url = "/thinking/"
+    weight = 4
+
