@@ -9,11 +9,7 @@ theme = "PaperMod"
   ShowBreadCrumbs = true
   math = true
 
-[menu]
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 10
+
 
 [params.profileMode]
   enabled = true
