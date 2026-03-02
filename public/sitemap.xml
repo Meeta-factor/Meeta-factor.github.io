@@ -2,14 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://192.168.2.102:1313/posts/</loc>
-    <lastmod>2026-03-01T15:25:55+08:00</lastmod>
+    <loc>http://192.168.2.102:1313/control/</loc>
+    <lastmod>2026-03-01T16:14:51+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/math/lyapunov-proof/</loc>
+    <lastmod>2026-03-01T16:14:51+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/math/</loc>
+    <lastmod>2026-03-01T16:14:51+08:00</lastmod>
   </url><url>
     <loc>http://192.168.2.102:1313/</loc>
+    <lastmod>2026-03-01T16:14:51+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/thinking/</loc>
+    <lastmod>2026-03-01T16:14:51+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/posts/optimization/</loc>
+    <lastmod>2026-03-01T15:25:55+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/posts/</loc>
     <lastmod>2026-03-01T15:25:55+08:00</lastmod>
   </url><url>
     <loc>http://192.168.2.102:1313/posts/first/</loc>
     <lastmod>2026-03-01T15:25:55+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/posts/test-code/</loc>
+    <lastmod>2026-03-01T15:25:55+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/math/lyapunov-stability/</loc>
+    <lastmod>2026-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/embedded/</loc>
+    <lastmod>2026-03-01T00:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://192.168.2.102:1313/embedded/pi-deploy/</loc>
+    <lastmod>2026-03-01T00:00:00+08:00</lastmod>
   </url><url>
     <loc>http://192.168.2.102:1313/categories/</loc>
   </url><url>

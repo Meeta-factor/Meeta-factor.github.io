@@ -1,0 +1,14 @@
+# Hugo build output
+/public/
+/resources/
+/.hugo_build.lock
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# 临时文件
+*.log
+*.tmp

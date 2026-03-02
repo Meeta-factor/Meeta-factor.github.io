@@ -1,0 +1,135 @@
+/* ===== Micro UI polish for PaperMod ===== */
+
+/* 页面整体更有层次：轻微渐变背景 */
+.main {
+  background: radial-gradient(1200px 600px at 50% -20%, rgba(0,0,0,.06), transparent 60%);
+}
+
+/* profile 卡片更像“卡片” */
+.profile {
+  padding: 28px 20px !important;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+/* 头像更精致一点 */
+.profile .profile_inner img {
+  border-radius: 18px !important;     /* 从圆形变圆角矩形（更工程感） */
+  box-shadow: 0 10px 25px rgba(0,0,0,.18);
+  transform: translateY(-2px);
+}
+
+/* 标题更“硬朗”一些 */
+.profile .profile_inner h1 {
+  letter-spacing: .5px;
+  font-weight: 800;
+}
+
+/* 副标题稍微淡一点 */
+.profile .profile_inner span {
+  opacity: .85;
+}
+
+/* 按钮：圆角、阴影、悬停动效 */
+.profile .buttons a.button {
+  border-radius: 14px !important;
+  padding: 10px 16px !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+/* 悬停：轻微抬起 */
+.profile .buttons a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,.12);
+  border-color: rgba(0,0,0,.18) !important;
+}
+
+/* 深色模式下也保持克制 */
+@media (prefers-color-scheme: dark) {
+  .main {
+    background: radial-gradient(1200px 600px at 50% -20%, rgba(255,255,255,.06), transparent 60%);
+  }
+  .profile {
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+  .profile .buttons a.button {
+    border: 1px solid rgba(255,255,255,.12) !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,.35);
+  }
+  .profile .buttons a.button:hover {
+    border-color: rgba(255,255,255,.22) !important;
+    box-shadow: 0 12px 26px rgba(0,0,0,.45);
+  }
+}
+
+.mermaid {
+  text-align: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+}
+
+/* ===== Left TOC + Right Content layout ===== */
+
+/* 左侧目录容器（由 JS 插入） */
+#left-toc {
+  position: sticky;
+  top: 90px;                /* 适配顶部导航高度，必要时你可以调成 70/110 */
+  width: 280px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  background: var(--theme);
+}
+
+/* 左目录标题 */
+#left-toc .toc-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* 布局容器：两栏 */
+#two-col {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+/* 右侧正文容器 */
+#right-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 把正文区域拉宽一点（不然右边太窄） */
+.post-content {
+  max-width: 980px;
+}
+
+/* 小屏就别搞两栏，直接回到默认（目录放回正文更合理） */
+@media (max-width: 1200px) {
+  #two-col { display: block; }
+  #left-toc { display: none; }
+  .post-content { max-width: 100%; }
+}
+/* 让页面主区域变宽，避免右侧大空白 */
+.main {
+  max-width: 1600px;   /* 你也可以 1400/1800，自行调 */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+/* 正文列更宽一些，右侧空白就没了 */
+.post-content {
+  max-width: 1200px;
+}
+

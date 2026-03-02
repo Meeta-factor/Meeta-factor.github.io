@@ -1,0 +1,58 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // 1) 找到文章主体
+  const article = document.querySelector("article.post-single");
+  if (!article) return;
+
+  // 2) 找到 TOC（PaperMod 常见的 toc 容器）
+  //   - 有的版本是 div.toc
+  //   - 有的版本是 #TableOfContents（里面是 ul）
+  const tocBox = article.querySelector(".toc");
+  const tocInner = article.querySelector("#TableOfContents");
+
+  // 目录不存在就不做两栏
+  if (!tocBox && !tocInner) return;
+
+  // 3) 创建两栏容器
+  const twoCol = document.createElement("div");
+  twoCol.id = "two-col";
+
+  const left = document.createElement("aside");
+  left.id = "left-toc";
+  left.innerHTML = '';
+
+  const right = document.createElement("div");
+  right.id = "right-content";
+
+  // 4) 右侧放“原本的文章内容”
+  // 这里我们把 article 里面除了 header 以外的内容整体移到右侧
+  // 保留文章头部（标题、日期等）不动
+  const header = article.querySelector(".post-header");
+  const content = article.querySelector(".post-content");
+  if (!content) return;
+
+  // 5) 左侧放 TOC（优先用 tocBox，否则用 tocInner 包起来）
+  if (tocBox) {
+    left.appendChild(tocBox);
+  } else {
+    // tocInner 通常是 <nav id="TableOfContents"><ul>...</ul></nav> 或直接 ul
+    const wrap = document.createElement("div");
+    wrap.className = "toc";
+    wrap.appendChild(tocInner);
+    left.appendChild(wrap);
+  }
+
+  // 6) 把正文内容移到 right
+  right.appendChild(content);
+
+  // 7) 把 twoCol 插回 article：放在 header 后面
+  twoCol.appendChild(left);
+  twoCol.appendChild(right);
+
+  if (header) {
+    header.insertAdjacentElement("afterend", twoCol);
+  } else {
+    article.prepend(twoCol);
+  }
+});
+</script>

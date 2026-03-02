@@ -1,5 +1,6 @@
-+++
-title = 'Pi Deploy'
-date = 2026-03-01T16:14:51+08:00
-draft = true
-+++
+---
+title: "pi deploy"
+date: 2026-03-01T00:00:00+08:00
+draft: false
+---
+

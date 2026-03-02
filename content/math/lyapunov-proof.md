@@ -1,5 +1,8 @@
-+++
-title = 'Lyapunov Proof'
-date = 2026-03-01T16:14:51+08:00
-draft = true
-+++
+---
+title: "Lyapunov Proof"
+date: 2026-03-01T16:14:51+08:00
+draft: false
+math:  true
+---
+Optimization and Control of Light Reflection Performance of Porous Membranes
+
