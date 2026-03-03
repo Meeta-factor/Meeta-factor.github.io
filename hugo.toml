@@ -1,5 +1,5 @@
 #baseURL = "http://localhost:1313/"
-baseURL = "https://Meeta-factor.github.io/"
+baseURL = "https://meeta-factor.github.io/"
 languageCode = "zh-cn"
 title = "Meta的工程日志"
 theme = "PaperMod"
