@@ -3,6 +3,7 @@ title: "optimization"
 toc: true
 date: 2026-03-01T15:25:55+08:00
 draft: false
+weight: 3
 math: true
 ---
 ![测试图片](/images/test.png)

@@ -1,4 +1,3 @@
-#baseURL = "http://localhost:1313/"
 baseURL = "https://meeta-factor.github.io/"
 languageCode = "zh-cn"
 title = "Meta的工程日志"
@@ -6,8 +5,16 @@ theme = "PaperMod"
 [markup.goldmark.renderer]
   unsafe = true
 
+[markup.highlight]
+  lineNos = true
+  lineNumbersInTable = false
+  codeFences = true
+  guessSyntax = true
+
 [server]
 enableCORS = true
+
+
 
 [params]
   ShowReadingTime = true
@@ -22,11 +29,11 @@ enableCORS = true
 [params.profileMode]
   enabled = true
   title = "Meta的工程日志"
-  subtitle = "控制 · 嵌入式 · 系统思考"
+  subtitle = "控制工程本科生，关注从理论到落地的完整闭环。<br>研究方向：控制理论 · 嵌入式系统 · 数学建模。<br>这里持续记录实验复盘、技术笔记与工程思考。"
   imageUrl = "/images/home.jpg"
-  imageTitle = "control"
-  imageWidth = 120
-  imageHeight = 120
+  imageTitle = ""
+  imageWidth = 600
+  imageHeight = 450
   buttons = [
     { name = "Control", url = "/control/" },
     { name = "Embedded", url = "/embedded/" },
@@ -65,4 +72,3 @@ enableCORS = true
     name = "Posts"
     url = "/posts/"
     weight = 5
-

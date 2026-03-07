@@ -16,14 +16,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  // 1) 把 Hugo 产生的 <pre><code class="language-mermaid">...</code></pre>
-  //    转成 Mermaid 需要的 <div class="mermaid">...</div>
-  document.querySelectorAll("pre > code.language-mermaid").forEach(function (code) {
-    var pre = code.parentElement;
+  // 1) 把 Mermaid 代码块转成 <div class="mermaid">...</div>
+  // 兼容普通 <pre><code> 和启用行号后的高亮结构。
+  document.querySelectorAll("code.language-mermaid").forEach(function (code) {
+    var block = code.closest("div.highlight") || code.closest("pre");
+    if (!block || !block.parentNode) return;
     var div = document.createElement("div");
     div.className = "mermaid";
-    div.textContent = code.textContent; // 用 textContent，避免奇怪字符触发 HTML 解析
-    pre.parentNode.replaceChild(div, pre);
+    div.textContent = code.textContent;
+    block.parentNode.replaceChild(div, block);
   });
 
   // 2) 初始化并渲染

@@ -2,6 +2,7 @@
 title: "第二篇：代码测试"
 date: 2026-03-01T15:25:55+08:00
 draft: false
+weight: 2
 math: true
 mermaid: true
 ---
@@ -46,5 +47,4 @@ $$\int _{0}^{1} \sin(x) \mathrm{d}x$$
 <iframe width="600" height="400"
 src="https://www.youtube.com/embed/_bqa_I5hNAo"
 frameborder="0" allowfullscreen></iframe>
-
 
