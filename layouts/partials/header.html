@@ -31,48 +31,6 @@
                 {{- $label_text -}}
             </a>
             {{- end }}
-        </div>
-        <div class="nav-right">
-            {{- $currentPage := . }}
-            <ul id="menu">
-                {{- range site.Menus.main }}
-                {{- $page := site.GetPage .KeyName }}
-                {{- $is_search := and $page (eq $page.Layout `search`) }}
-                {{- if not $is_search }}
-                {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
-                {{- $page_url:= $currentPage.Permalink | absLangURL }}
-                <li>
-                    <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">
-                        <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
-                            {{- .Pre }}
-                            {{- .Name -}}
-                            {{ .Post -}}
-                        </span>
-                        {{- if (findRE "://" .URL) }}&nbsp;
-                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
-                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
-                            <path d="M15 3h6v6"></path>
-                            <path d="M10 14L21 3"></path>
-                        </svg>
-                        {{- end }}
-                    </a>
-                </li>
-                {{- end }}
-                {{- end }}
-            </ul>
-
-            <a class="header-search" href="{{ "/search/" | absLangURL }}" aria-label="打开搜索" title="搜索 (Ctrl/Cmd + K)">
-                <span class="header-search-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="7"></circle>
-                        <path d="m20 20-3.5-3.5"></path>
-                    </svg>
-                </span>
-                <span class="header-search-text">搜索</span>
-                <span class="header-search-kbd" aria-hidden="true">Ctrl K</span>
-            </a>
 
             <div class="logo-switches">
                 {{- if (not site.Params.disableThemeToggle) }}
@@ -122,6 +80,48 @@
                     {{- end }}
                 {{- end }}
             </div>
+        </div>
+        <div class="nav-right">
+            {{- $currentPage := . }}
+            <ul id="menu">
+                {{- range site.Menus.main }}
+                {{- $page := site.GetPage .KeyName }}
+                {{- $is_search := and $page (eq $page.Layout `search`) }}
+                {{- if not $is_search }}
+                {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+                {{- $page_url:= $currentPage.Permalink | absLangURL }}
+                <li>
+                    <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">
+                        <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
+                            {{- .Pre }}
+                            {{- .Name -}}
+                            {{ .Post -}}
+                        </span>
+                        {{- if (findRE "://" .URL) }}&nbsp;
+                        <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                            <path d="M15 3h6v6"></path>
+                            <path d="M10 14L21 3"></path>
+                        </svg>
+                        {{- end }}
+                    </a>
+                </li>
+                {{- end }}
+                {{- end }}
+            </ul>
+
+            <a class="header-search" href="{{ "/search/" | absLangURL }}" aria-label="打开搜索" title="搜索 (Ctrl/Cmd + K)">
+                <span class="header-search-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-3.5-3.5"></path>
+                    </svg>
+                </span>
+                <span class="header-search-text">搜索</span>
+                <span class="header-search-kbd" aria-hidden="true">Ctrl K</span>
+            </a>
         </div>
     </nav>
 </header>
