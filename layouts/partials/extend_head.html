@@ -14,6 +14,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 
+{{- $fuse := resources.Get "js/fuse.basic.min.js" | fingerprint }}
+<script defer src="{{ $fuse.RelPermalink }}" integrity="{{ $fuse.Data.Integrity }}"></script>
+<script defer src="{{ "js/search-modal.js" | absURL }}"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // 1) 把 Mermaid 代码块转成 <div class="mermaid">...</div>

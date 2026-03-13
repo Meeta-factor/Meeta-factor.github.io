@@ -2,6 +2,10 @@ baseURL = "https://meeta-factor.github.io/"
 languageCode = "zh-cn"
 title = "Meta的工程日志"
 theme = "PaperMod"
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
 [markup.goldmark.renderer]
   unsafe = true
 
@@ -72,3 +76,9 @@ enableCORS = true
     name = "Posts"
     url = "/posts/"
     weight = 5
+  
+  [[menu.main]]
+  name = "Search"
+  url = "/search/"
+  weight = 6
+

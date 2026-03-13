@@ -56,3 +56,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
+<div id="searchModal" class="search-modal" aria-hidden="true" data-index-url="{{ "index.json" | absLangURL }}">
+  <div class="search-modal-backdrop"></div>
+  <div class="search-modal-panel" role="dialog" aria-modal="true" aria-labelledby="searchModalInput">
+    <div class="search-modal-bar">
+      <span class="search-modal-icon" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-3.5-3.5"></path>
+        </svg>
+      </span>
+      <input id="searchModalInput" type="search" autocomplete="off" maxlength="80" placeholder="搜索文档" aria-label="搜索文档">
+      <button id="searchModalClear" class="search-modal-action" type="button" aria-label="清空搜索">清空</button>
+      <button id="searchModalClose" class="search-modal-action" type="button" aria-label="关闭搜索">关闭</button>
+    </div>
+    <p id="searchModalStatus" class="search-modal-status">输入关键词开始搜索。</p>
+    <ul id="searchModalResults" class="search-modal-results" aria-label="搜索结果"></ul>
+    <div class="search-modal-hints" aria-hidden="true">
+      <span><kbd>↑</kbd><kbd>↓</kbd>切换</span>
+      <span><kbd>Enter</kbd>选择</span>
+      <span><kbd>Esc</kbd>关闭</span>
+    </div>
+  </div>
+</div>

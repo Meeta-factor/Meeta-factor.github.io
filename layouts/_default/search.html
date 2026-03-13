@@ -1,0 +1,38 @@
+{{- define "main" }}
+
+<section class="search-hero">
+    <div class="search-hero-inner">
+        <div class="search-hero-actions">
+            <a class="search-back" href="javascript:history.back()" aria-label="退出搜索">
+                <span aria-hidden="true">←</span>
+                <span>返回</span>
+            </a>
+        </div>
+        <p class="search-eyebrow">Documentation Search</p>
+        <h1>{{ .Title }}</h1>
+        <p class="search-lead">{{ .Description | default "输入标题、摘要、分类或正文关键词，实时筛选站内内容。" }}</p>
+    </div>
+</section>
+
+<section class="search-shell">
+    <div id="searchbox" class="search-panel">
+        <label class="search-input-wrap" for="searchInput">
+            <span class="search-input-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m20 20-3.5-3.5"></path>
+                </svg>
+            </span>
+            <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default "搜索标题、摘要、正文" }}"
+                aria-label="search" type="search" autocomplete="off" maxlength="64">
+            <span class="search-shortcut" aria-hidden="true">Esc 清空</span>
+        </label>
+        <div class="search-meta">
+            <p id="searchStatus">开始输入以搜索全站内容。</p>
+        </div>
+        <ul id="searchResults" aria-label="search results"></ul>
+    </div>
+</section>
+
+{{- end }}{{/* end main */}}
