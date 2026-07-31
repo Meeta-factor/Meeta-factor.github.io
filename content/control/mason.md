@@ -24,7 +24,7 @@ math: true
 
 在具体实现上，这个工具采用一种尽量简洁、结构明确的输入方式：用边列表（edge list）来描述信号流图。每一条边由“起点、终点、增益”三部分组成，可以用 CSV 或 Python 数据结构表示。例如：
 
-```json
+```text
 start,end,gain
 R,n1,1
 n1,n2,G1

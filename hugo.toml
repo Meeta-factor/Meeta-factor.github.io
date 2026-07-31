@@ -38,13 +38,13 @@ enableCORS = true
   imageTitle = ""
   imageWidth = 600
   imageHeight = 450
-  buttons = [
-    { name = "Control", url = "/control/" },
-    { name = "Embedded", url = "/embedded/" },
-    { name = "Math", url = "/math/" },
-    { name = "Thinking", url = "/thinking/" },
-    { name = "Posts", url = "/posts/" }
-  ]
+  # buttons = [
+  #   { name = "Control", url = "/control/" },
+  #   { name = "Embedded", url = "/embedded/" },
+  #   { name = "Math", url = "/math/" },
+  #   { name = "Thinking", url = "/thinking/" },
+  #   { name = "Posts", url = "/posts/" }
+  # ]
 
 [params.assets]
   disableHLJS = true
